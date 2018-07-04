@@ -6,7 +6,7 @@
 /*   By: anestor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 13:28:55 by anestor           #+#    #+#             */
-/*   Updated: 2018/03/31 01:52:16 by anestor          ###   ########.fr       */
+/*   Updated: 2018/07/04 16:08:14 by anestor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <fcntl.h>
-
+# include "structs.h"
+/*
 typedef struct		s_list
 {
 	void			*content;
@@ -44,7 +45,7 @@ typedef struct		s_dxy
 	double			x;
 	double			y;
 }					t_dxy;
-
+*/
 /*
 ** mem
 */
@@ -140,7 +141,7 @@ int					ft_isspace(int c);
 int					ft_isbase(int c, int base);
 
 /*
-** arrays and matrixs
+** arrays and matriciess
 */
 
 int					*ft_make_array(int size);
