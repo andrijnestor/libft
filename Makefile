@@ -6,7 +6,7 @@
 #    By: anestor <anestor@student.unit.ua>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 13:41:32 by anestor           #+#    #+#              #
-#    Updated: 2018/07/04 15:01:17 by anestor          ###   ########.fr        #
+#    Updated: 2018/07/04 15:39:06 by anestor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,7 +128,7 @@ $(OBJS): | ./obj
 
 clean:
 	@echo "...  cleaning \033[96mlibft obj\033[0m ..."
-	@rm -rf obj/
+	@rm -rf $(ODIR)
 
 fclean: clean
 	@echo "...  cleaning \033[96m$(NAME)\033[0m ..."
