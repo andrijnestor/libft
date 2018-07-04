@@ -6,126 +6,132 @@
 #    By: anestor <anestor@student.unit.ua>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 13:41:32 by anestor           #+#    #+#              #
-#    Updated: 2018/03/08 23:25:20 by anestor          ###   ########.fr        #
+#    Updated: 2018/07/04 15:01:17 by anestor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-FLAGS = 
-ODIR = bin/
-OBJ = $(SRC:.c=.o)
-EXT = libft.h
-SRC = 
+FLAGS = -Wall -Wextra -Werror
+ODIR = obj
+IDIR = inc
+SDIR = src
+INCLUDE = -I$(IDIR)
+L_DIR = libc
+NL_DIR = nonlibc
+EXT = $(IDIR)/*.h
 
-SRC += ft_strcat.c
-SRC += ft_strcmp.c
-SRC += ft_strdup.c
-SRC += ft_striteri.c
-SRC += ft_strlen.c
-SRC += ft_strncat.c
-SRC += ft_strnequ.c
-SRC += ft_strsplit.c
-SRC += ft_strtrim.c
-SRC += ft_strchr.c
-SRC += ft_strcpy.c
-SRC += ft_strequ.c
-SRC += ft_strjoin.c
-SRC += ft_strmap.c
-SRC += ft_strncmp.c
-SRC += ft_strnew.c
-SRC += ft_strstr.c
-SRC += ft_strnstr.c
-SRC += ft_strclr.c
-SRC += ft_strdel.c
-SRC += ft_striter.c
-SRC += ft_strlcat.c
-SRC += ft_strmapi.c
-SRC += ft_strncpy.c
-SRC += ft_strrchr.c
-SRC += ft_strsub.c
-SRC += ft_isascii.c
-SRC += ft_isdigit.c
-SRC += ft_isprint.c
-SRC += ft_isalpha.c
-SRC += ft_toupper.c
-SRC += ft_tolower.c
-SRC += ft_atoi.c
-SRC += ft_itoa.c
-SRC += ft_bzero.c
-SRC += ft_isalnum.c
-SRC += ft_putchar.c
-SRC += ft_putchar_fd.c
-SRC += ft_putendl.c
-SRC += ft_putendl_fd.c
-SRC += ft_putnbr.c
-SRC += ft_putnbr_fd.c
-SRC += ft_putstr.c
-SRC += ft_putstr_fd.c
-SRC += ft_memalloc.c
-SRC += ft_memccpy.c
-SRC += ft_memchr.c
-SRC += ft_memcmp.c
-SRC += ft_memcpy.c
-SRC += ft_memdel.c
-SRC += ft_memmove.c
-SRC += ft_memset.c
-SRC += ft_lstnew.c
-SRC += ft_lstdelone.c
-SRC += ft_lstdel.c
-SRC += ft_lstadd.c
-SRC += ft_lstiter.c
-SRC += ft_lstmap.c
-SRC += ft_atoi_base.c
-SRC += ft_itoa_base.c
-SRC += ft_uitoa_base.c
-SRC += ft_isspace.c
-SRC += ft_isbase.c
-SRC += ft_strtrim_char.c
-SRC += ft_invert_char.c
-SRC += ft_putstr_col.c
-SRC += ft_lstadd_back.c
-SRC += ft_sqrt.c
-SRC += get_next_line.c
-SRC += ft_strrmap.c
-SRC += ft_printf.c
-SRC += ft_printf_sub.c
-SRC += ft_printf_chars.c
-SRC += ft_printf_nums.c
-SRC += ft_printf_make_params.c
-SRC += ft_printf_kostyl.c
-SRC += ft_count_words.c
-SRC += ft_num_len.c
-SRC += ft_itoa_base_int.c
-SRC += ft_txy.c
-SRC += ft_make_array.c
-SRC += ft_make_matrix.c
-SRC += ft_del_matrix.c
-SRC += ft_copy_matrix.c
+#SRCS =
+#SRCS += $(addprefix $(SDIR)/$(L_DIR)/,$(SRCL))
+#SRCS += $(addprefix $(SDIR)/$(NL_DIR)/,$(SRCNL))
 
-O = $(addprefix $(ODIR), $(OBJ))
+OBJS =
+OBJS += $(addprefix $(ODIR)/,$(SRCL:.c=.o))
+OBJS += $(addprefix $(ODIR)/,$(SRCNL:.c=.o))
+
+SRCL =	ft_atoi.c \
+		ft_memchr.c \
+		ft_strlen.c \
+		ft_bzero.c \
+		ft_memcmp.c \
+		ft_strncat.c \
+		ft_isalnum.c \
+		ft_memcpy.c \
+		ft_sqrt.c \
+		ft_strncmp.c \
+		ft_isalpha.c \
+		ft_memmove.c \
+		ft_strcat.c \
+		ft_strncpy.c \
+		ft_isascii.c \
+		ft_memset.c \
+		ft_strchr.c \
+		ft_strnstr.c \
+		ft_isbase.c \
+		ft_strcmp.c \
+		ft_strrchr.c \
+		ft_isdigit.c \
+		ft_strcpy.c \
+		ft_strstr.c \
+		ft_isprint.c \
+		ft_strdel.c \
+		ft_tolower.c \
+		ft_isspace.c \
+		ft_strdup.c \
+		ft_toupper.c \
+		ft_memccpy.c \
+		ft_strlcat.c
+
+SRCNL =	ft_atod.c \
+		ft_lstadd_back.c \
+		ft_num_len.c \
+		ft_strclr.c \
+		ft_strsplit.c \
+		ft_atoi_base.c \
+		ft_lstdel.c \
+		ft_putchar.c \
+		ft_strequ.c \
+		ft_strsub.c \
+		ft_copy_matrix.c \
+		ft_lstdelone.c \
+		ft_putchar_fd.c \
+		ft_striter.c \
+		ft_strtrim.c \
+		ft_count_words.c \
+		ft_lstiter.c \
+		ft_putendl.c \
+		ft_striteri.c \
+		ft_strtrim_char.c \
+		ft_del_matrix.c \
+		ft_lstmap.c \
+		ft_putendl_fd.c \
+		ft_strjoin.c \
+		ft_uitoa_base.c \
+		ft_invert_char.c \
+		ft_lstnew.c \
+		ft_putnbr.c \
+		ft_strmap.c \
+		ft_xy.c \
+		ft_itoa.c \
+		ft_make_array.c \
+		ft_putnbr_fd.c \
+		ft_strmapi.c \
+		ft_xyz.c \
+		ft_itoa_base.c \
+		ft_make_matrix.c \
+		ft_putstr.c \
+		ft_strnequ.c \
+		get_next_line.c \
+		ft_itoa_base_int.c \
+		ft_memalloc.c \
+		ft_putstr_col.c \
+		ft_strnew.c \
+		ft_lstadd.c \
+		ft_memdel.c \
+		ft_putstr_fd.c \
+		ft_strrmap.c
+
 
 all: $(NAME)
 
-$(NAME): $(O) $(EXT)
-#	@echo " ░       \033[96mcompiling libft\033[0m       ░ "
-	@ar rc $(NAME) $(O)
+$(NAME): $(OBJS) $(EXT)
+	@ar rc $(NAME) $(OBJS) $(EXT)
 	@ranlib $(NAME)
 
-$(ODIR)%.o: %.c $(EXT)
-	@echo "... compiling $< ..."
-	@gcc $(FLAGS) -c $< -o $@
+$(ODIR)/%.o: $(SDIR)/*/%.c
+	@echo "... compiling \033[96m$<\033[0m ..."
+	@gcc $(FLAGS) -c $< -o $@ $(INCLUDE)
 
-$(O): | ./bin
+$(OBJS): | ./obj
 
-./bin:
+./obj:
 	@mkdir $(ODIR)
 
 clean:
-	@echo "... cleaning libft obj ..."
-	@rm -rf bin/
+	@echo "...  cleaning \033[96mlibft obj\033[0m ..."
+	@rm -rf obj/
 
 fclean: clean
-	@echo "... cleaning $(NAME) ..."
+	@echo "...  cleaning \033[96m$(NAME)\033[0m ..."
 	@rm -f $(NAME)
 
 re: fclean all
